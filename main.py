@@ -1,7 +1,6 @@
 import pdfplumber
 from pydantic import BaseModel, Field
 from typing import List, Optional
-import json
 import csv
 from google import genai
 from google.genai import types
@@ -43,7 +42,7 @@ def structure_cv_page(raw_text: str) -> CVPage:
     return CVPage.model_validate(data)
 
 def main():
-    pdf_path = "C:\\Users\\hp omen\\OneDrive - um5.ac.ma\\STAGE\\cv\\ISMAIL-BRTIT-2025.pdf"
+    pdf_path = "ISMAIL-BRTIT-2025.pdf"
     print(f"Extraction de la page 1 de : {pdf_path}")
     raw = extract_page_text(pdf_path)
 
